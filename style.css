@@ -1,0 +1,41 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Current weather box */
+#result {
+  margin-top: 20px;
+}
+
+#result p {
+  margin: 5px;
+}
+
+/* Forecast container (horizontal layout) */
+.forecast-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Each card */
+.forecast-card {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 140px;
+  background-color: #f2f2f2;
+}
