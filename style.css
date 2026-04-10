@@ -1,7 +1,42 @@
-body {
-  font-family: Arial;
-  text-align: center;
-  margin-top: 50px;
+  body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  min-height: 100vh; /* Changed from height to min-height */
+  display: flex;
+  flex-direction: column; /* Stack things vertically */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  padding-top: 40px; 
+  padding-bottom: 40px;
+  overflow-y: auto;
+  background: transparent;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;   
+  height: 100vh;  
+  z-index: -1;    
+  
+  object-fit: cover; 
+
+  background-color: black; 
+}
+
+
+h1 {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.8), 
+    0px 0px 15px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -15,27 +50,101 @@ button {
 
 /* Current weather box */
 #result {
-  margin-top: 20px;
+  display: none;
+  margin: 10px auto;
+  padding: 15px;
+  color: #333;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  width: 300px;
+  backdrop-filter: blur(10px);
 }
 
 #result p {
   margin: 5px;
 }
 
-/* Forecast container (horizontal layout) */
 .forecast-container {
-  display: flex;
+  display: none;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  gap: 15px; /* Space between cards */
+  margin-top: 10px; /* Bring it closer to the main card */
+  padding: 10px;
+  background: transparent;
+  width: 100%;
 }
 
-/* Each card */
 .forecast-card {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  width: 140px;
-  background-color: #f2f2f2;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 12px; /* Reduced from 20px */
+  width: 110px; /* Slightly narrower */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+#forecast-heading {
+  display: none;
+  margin-top: 20px; /* Smaller gap */
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:white;
+  text-align: center;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.8), 
+    0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px); /* Adds a nice interactive feel */
+}
+
+.emoji {
+  font-size: 50px;
+  margin: 5px 0;
+}
+
+.emoji-small {
+  font-size: 25px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 25px;
+}
+.app-container {
+  text-align: center; /* Keeps everything centered */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  padding-bottom: 50;
+}
+input {
+  border-radius: 25px 0 0 25px;
+  border: 1px solid #ddd;
+  padding: 12px 20px;
+  width: 300px;
+}
+button {
+  border-radius: 0 25px 25px 0;
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+}
+button:hover {
+  background-color: #00f2fe;
 }

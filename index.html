@@ -5,18 +5,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <video autoplay muted loop playinline id="bg-video">
+  <source src="bg-video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-  <h2>Weather App</h2>
+  <div class="app-container">
 
-  <input type="text" id="city" placeholder="Enter city name">
-  <button onclick="getWeather()">Search</button>
-
+  <h1>Weather Station</h1></div>
+  <div class="Search-container">
+    <input type="text" id="city" placeholder="Enter city">
+    <button onclick="getWeather()">Search</button>
+  </div>
   <div id="result"></div>
 
-  <h3>5-Day Forecast</h3>
+  <h2 id="forecast-heading">Upcoming Weather</h2>
   <div class="forecast-container"></div>
 
-  <script src="script.js"></script>
-
+</div>
+<script src="script.js"></script>
 </body>
 </html>
