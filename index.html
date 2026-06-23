@@ -1,28 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Weather App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beautiful and responsive weather application.">
+  <title>Weather Station</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <video autoplay muted loop playinline id="bg-video">
-  <source src="bg-video.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="bg-video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-  <div class="app-container">
+  <main class="app-container">
+    <header>
+      <h1>Weather Station</h1>
+    </header>
 
-  <h1>Weather Station</h1></div>
-  <div class="Search-container">
-    <input type="text" id="city" placeholder="Enter city">
-    <button onclick="getWeather()">Search</button>
-  </div>
-  <div id="result"></div>
+    <section class="search-section">
+      <div class="search-container">
+        <i class="ph ph-magnifying-glass search-icon"></i>
+        <input type="text" id="city" placeholder="Enter city name..." aria-label="Search for a city">
+        <button onclick="getWeather()" aria-label="Search weather">Search</button>
+      </div>
+      <button class="location-btn" onclick="getWeatherByLocation()" aria-label="Use current location" title="Use current location">
+        <i class="ph ph-crosshair"></i>
+      </button>
+    </section>
 
-  <h2 id="forecast-heading">Upcoming Weather</h2>
-  <div class="forecast-container"></div>
+    <!-- Loading State -->
+    <div id="loading" class="hidden">
+      <i class="ph ph-spinner-gap spinner"></i>
+      <p>Fetching weather data...</p>
+    </div>
 
-</div>
-<script src="script.js"></script>
+    <!-- Error State -->
+    <div id="error" class="hidden">
+      <i class="ph ph-warning-circle"></i>
+      <p id="error-message">City not found!</p>
+    </div>
+
+    <!-- Current Weather Result -->
+    <section id="result" class="hidden">
+      <!-- Injected by JS -->
+    </section>
+
+    <!-- Upcoming Forecast -->
+    <section id="forecast-section" class="hidden">
+      <h2 id="forecast-heading">Upcoming Weather</h2>
+      <div class="forecast-container">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
