@@ -1,4 +1,3 @@
-const apiKey = "41a26112990da6374ecdfdea25d529b4";
 
 // DOM Elements
 const cityInput = document.getElementById("city");
@@ -196,6 +195,6 @@ function getIconColor(conditionCode) {
 
 // Automatically request location weather on startup (Optional, but good UX)
 document.addEventListener("DOMContentLoaded", () => {
-    // Optionally trigger location on load, or wait for user to click button
-    // getWeatherByLocation(); 
+  // Optionally trigger location on load, or wait for user to click button
+  // getWeatherByLocation(); 
 });
